@@ -1,1 +1,288 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0B0F1A;
+    color:#ffffff;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#3B82F633,transparent 40%),
+    radial-gradient(circle at bottom right,#8B5CF633,transparent 40%);
+    z-index:-1;
+}
+
+.header{
+    position:fixed;
+    width:100%;
+    top:0;
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,.05);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+nav{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:#3B82F6;
+    font-size:30px;
+    font-weight:700;
+    text-shadow:0 0 20px #3B82F6;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#8B5CF6;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    padding:120px 10%;
+    gap:40px;
+}
+
+.hero-text h1{
+    font-size:55px;
+}
+
+.hero-text span{
+    color:#3B82F6;
+}
+
+.hero-text h2{
+    margin:20px 0;
+    color:#8B5CF6;
+}
+
+.hero-text p{
+    color:#cbd5e1;
+    line-height:1.8;
+}
+.hero-img img{
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #3B82F6;
+    box-shadow:
+    0 0 30px #3B82F6,
+    0 0 60px #8B5CF6;
+}
+
+
+/* Buttons */
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 30px;
+    border-radius:30px;
+    background:linear-gradient(45deg,#3B82F6,#8B5CF6);
+    color:white;
+    text-decoration:none;
+    box-shadow:0 0 20px #3B82F6;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 35px #8B5CF6;
+}
+
+
+/* Common Sections */
+
+section{
+    padding:80px 10%;
+}
+
+section h2{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:40px;
+    color:#3B82F6;
+}
+
+
+/* About */
+
+.about p{
+    text-align:center;
+    max-width:800px;
+    margin:auto;
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+
+/* Skills */
+
+.skill-box{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.skill-box span{
+    padding:15px 25px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,.1);
+    box-shadow:0 0 15px #3B82F6;
+}
+
+
+/* Projects */
+
+.card{
+    background:rgba(255,255,255,.06);
+    padding:30px;
+    border-radius:20px;
+    margin:20px auto;
+    max-width:700px;
+    border:1px solid rgba(255,255,255,.1);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px #8B5CF6;
+}
+
+.card h3{
+    color:#8B5CF6;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#cbd5e1;
+    line-height:1.7;
+}
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    color:#cbd5e1;
+    margin:15px 0;
+    font-size:18px;
+}
+
+.contact a{
+    color:#3B82F6;
+    text-decoration:none;
+}
+
+.contact a:hover{
+    color:#8B5CF6;
+}
+
+
+/* Footer */
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:rgba(255,255,255,.05);
+    border-top:1px solid rgba(255,255,255,.1);
+    color:#cbd5e1;
+}
+
+
+/* Animation */
+
+.hero-text,
+.hero-img{
+    animation:fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* Mobile Responsive */
+
+@media(max-width:768px){
+
+    nav{
+        padding:15px 20px;
+    }
+
+    nav ul{
+        display:none;
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:150px;
+    }
+
+    .hero-text h1{
+        font-size:40px;
+    }
+
+    .hero-img img{
+        width:250px;
+        height:250px;
+    }
+
+    section{
+        padding:60px 5%;
+    }
+
+    section h2{
+        font-size:32px;
+    }
+
+    .skill-box{
+        gap:15px;
+    }
+
+    .card{
+        padding:20px;
+    }
+}
